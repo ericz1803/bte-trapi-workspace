@@ -20,6 +20,9 @@ npm run clone
 
 # install dependencies
 npm i
+
+# update all submodules
+git submodule update --recursive
 ```
 
 ### Start the development
