@@ -1,7 +1,7 @@
 [submodule "packages/@biothings-explorer/bte-trapi"]
 	path = packages/@biothings-explorer/bte-trapi
-	url = https://github.com/biothings/BioThings_Explorer_TRAPI.git
-	branch = main
+	url = https://github.com/ericz1803/BioThings_Explorer_TRAPI.git
+	branch = icees
 	update = merge
 [submodule "packages/@biothings-explorer/query_graph_handler"]
 	path = packages/@biothings-explorer/query_graph_handler
@@ -20,13 +20,13 @@
 	update = merge
 [submodule "packages/@biothings-explorer/smartapi-kg"]
 	path = packages/@biothings-explorer/smartapi-kg
-	url = https://github.com/biothings/smartapi-kg.js.git
-	branch = main
+	url = https://github.com/ericz1803/smartapi-kg.js.git
+	branch = icees
 	update = merge
 [submodule "packages/@biothings-explorer/call-apis"]
 	path = packages/@biothings-explorer/call-apis
-	url = https://github.com/biothings/call-apis.js.git
-	branch = main
+	url = https://github.com/ericz1803/call-apis.js.git
+	branch = icees
 	update = merge
 [submodule "packages/@biothings-explorer/api-response-transform"]
 	path = packages/@biothings-explorer/api-response-transform
