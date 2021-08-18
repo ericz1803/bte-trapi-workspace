@@ -24,6 +24,14 @@ npm i
 # update all packages
 npm run pull
 ```
+### Change fork/branch for one or more packages
+1. update `.gitmodules`with the new url/branch
+2. Run the follwing commands:
+```
+git submodule sync
+npm run pull
+```
+3. Restart terminals used to run server.
 
 ### Start the development
 
