@@ -15,8 +15,8 @@
 	update = merge
 [submodule "packages/biomedical_id_resolver"]
 	path = packages/biomedical_id_resolver
-	url = https://github.com/ericz1803/biomedical_id_resolver.js.git
-	branch = main
+	url = https://github.com/biothings/biomedical_id_resolver.js.git
+	branch = sri-resolver
 	update = merge
 [submodule "packages/@biothings-explorer/smartapi-kg"]
 	path = packages/@biothings-explorer/smartapi-kg
