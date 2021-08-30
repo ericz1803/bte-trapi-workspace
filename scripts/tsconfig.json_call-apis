@@ -13,6 +13,12 @@
   ],
   "references": [
     {
+      "path": "../api-response-transform"
+    },
+    {
+      "path": "../../biomedical_id_resolver"
+    },
+    {
       "path": "../smartapi-kg"
     }
   ]
