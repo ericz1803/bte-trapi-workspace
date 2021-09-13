@@ -1,6 +1,10 @@
 current_folder=`pwd`
 remote_url=`git config --get remote.origin.url`
 echo $remote_url | grep -Eq ^https && remote_protocol="https"  || remote_protocol="git"
+if [ -n "$GIT_REMOTE_PROTOCOL" ]; then
+    # use value from ENV variable if provided
+    remote_protocol="$GIT_REMOTE_PROTOCOL";
+fi
 if [ "$remote_protocol" = "https" ]; then
    echo "Clone repos using https..."
    base_url="https://github.com/"

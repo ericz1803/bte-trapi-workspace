@@ -1,6 +1,14 @@
 {
-  "lerna": "2.2.0",
-  "packages": ["packages/*", "packages/@biothings-explorer/*"],
+  "packages": [
+    "./packages/biolink-model",
+    "./packages/biomedical_id_resolver",
+    "./packages/@biothings-explorer/api-response-transform",
+    "./packages/@biothings-explorer/call-apis",
+    "./packages/@biothings-explorer/query_graph_handler",
+    "./packages/@biothings-explorer/smartapi-kg",
+    "./packages/@biothings-explorer/bte-trapi"
+  ],
   "npmClient": "npm",
-  "version": "1.0.0"
+  "version": "independent",
+  "useWorkspaces": true
 }

@@ -5,10 +5,12 @@
     "clone": "./scripts/clone_packages.sh",
     "pull": "./scripts/pull_packages.sh",
     "git": "./scripts/run_git_packages.sh",
+    "get_rev": "./scripts/get_rev.sh",
     "watch": "tsc -b tsconfig.build.json --watch",
     "watch2": "nodemon -e js,mjs,json,ts --watch packages --exec npm run compile",
     "debug": "npm run debug --workspace='@biothings-explorer/bte-trapi'",
     "clean": "rimraf \"packages/**/built\" \"packages/**/*.tsbuildinfo\"",
+    "clean_on_prod": "rimraf \"packages/**/__test__\" \"packages/**/.git\" \"packages/**/node_modules\"",
     "compile": "tsc -b tsconfig.build.json",
     "prettier": "prettier \"*.{js,json,yml,md}\" \"packages/**/*\"",
     "format": "npm run prettier -- --write",
@@ -18,10 +20,16 @@
     "prepare": "npm run compile"
   },
   "devDependencies": {
-    "lerna": "4.0.0",
-    "prettier": "2.3.1",
-    "rimraf": "3.0.2",
+    "@typescript-eslint/eslint-plugin": "^4.29.3",
+    "@typescript-eslint/parser": "^4.29.3",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.1",
+    "lerna": "^4.0.0",
     "nodemon": "^2.0.7",
+    "prettier": "^2.3.1",
+    "rimraf": "^3.0.2",
+    "supports-color": "^7.2.0",
     "typescript": "4.3.4"
   },
   "workspaces": [
