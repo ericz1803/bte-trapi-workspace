@@ -5,12 +5,14 @@
             "cwd": "packages/@biothings-explorer/bte-trapi",
             "script": "./src/server.js",
     	    "exec_mode": "cluster",
-            "instances": 2,
+            "instances": 3,
             "autorestart": true,
+            "exp_backoff_restart_delay": 100,
             "instance_var": "INSTANCE_ID",
             "env":{
                 "PORT": "3000",
-                "LOG": "./log"
+                "LOG": "./log",
+                "REQUEST_TIMEOUT": 1200
             },
             "env_prod": {
        	        "NODE_ENV": "production",
@@ -18,10 +20,20 @@
                 "REDIS_PORT": 6379
             },
             "env_prod_nocache": {
-                "NODE_ENV": "production"
+                "NODE_ENV": "production",
+                "REDIS_HOST": "localhost",
+                "REDIS_PORT": 6379,
+                "RESULT_CACHING": false
+            },
+            "env_prodci": {
+                "NODE_ENV": "production",
+                "REDIS_TLS_ENABLED": true
             },
             "env_dev": {
-                "DEBUG": "biomedical-id-resolver,bte*"
+                "DEBUG": "biomedical-id-resolver,bte*",
+                "REDIS_HOST": "localhost",
+                "REDIS_PORT": 6379,
+                "RESULT_CACHING": false
             }
         }
     ]
