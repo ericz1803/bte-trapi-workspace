@@ -1,0 +1,68 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "bte.fullname" . }}
+  labels:
+    {{- include "bte.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "bte.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "bte.selectorLabels" . | nindent 8 }}
+    spec:
+      serviceAccountName: {{ include "bte.serviceAccountName" . }}
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          command:
+            - "/bin/sh"
+            - "/scripts/start_app.sh"
+          ports:
+            - name: http
+              containerPort: 3000
+              protocol: TCP
+          volumeMounts:
+            - name: {{ include "bte.fullname" . }}-configs-volume
+              mountPath: /configs
+            - name: {{ include "bte.fullname" . }}-env-volume
+              mountPath: /env
+            - name: {{ include "bte.fullname" . }}-scripts-volume
+              mountPath: /scripts
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      volumes:
+        - name: {{ include "bte.fullname" . }}-secret-volume
+          secret:
+            secretName: {{ include "bte.fullname" . }}-secret
+            defaultMode: 0400
+        - name: {{ include "bte.fullname" . }}-scripts-volume
+          configMap:
+            name: {{ include "bte.fullname" . }}-scripts
+            defaultMode: 0755
+        - name: {{ include "bte.fullname" . }}-configs-volume
+          configMap:
+            name: {{ include "bte.fullname" . }}-configs
+            defaultMode: 0755
+        - name: {{ include "bte.fullname" . }}-env-volume
+          configMap:
+            name: {{ include "bte.fullname" . }}-env
+            defaultMode: 0755

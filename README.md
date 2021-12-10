@@ -50,3 +50,29 @@ npm run pull
   ```
 
 Now when you save your code change, the dev server should restart to reflect the latest change (after a few seconds).
+
+### Developing with redis enabled
+
+* install redis  
+
+  macOS: 
+  ```
+  brew install redis
+  ```
+
+* start redis  
+
+  macOS:
+  ```
+  brew services start redis
+  ```
+  linux:
+  ```
+  sudo service redis-server start
+  ```
+
+* start dev server with redis enabled  
+
+  ```
+  REDIS_HOST=localhost REDIS_PORT=6379  REQUEST_TIMEOUT=1200 npm run debug --workspace=@biothings-explorer/bte-trapi
+  ```

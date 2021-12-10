@@ -1,0 +1,9 @@
+# Generated from "npm run get_rev" on  Wed Dec 8 11:43:53 PST 2021
+git@github.com:biothings/bte-trapi-workspace.git 1ebddfa 1ebddfa45959439295e43fb2d7f5fa82c5301fff
+git@github.com:biothings/BioThings_Explorer_TRAPI.git a6c2f40 a6c2f40e91ef8f5b6e3850ff9e2c7567892a20f2
+git@github.com:biothings/bte_trapi_query_graph_handler.git 955e110 955e110f902d5944fbfc55ec9cc2f5c0a75c5f6d
+git@github.com:biothings/biolink-model.js.git 9757091 975709174dbf18cd5559203ee34dbee71e31a9ab
+git@github.com:biothings/biomedical_id_resolver.js.git c828256 c82825667cb51c4f7054f46b8ffe9a2524dfb211
+git@github.com:biothings/smartapi-kg.js.git 7020d64 7020d647e19b4bc90f034ad9da8d608abdd45049
+git@github.com:biothings/call-apis.js.git e584f38 e584f3883a835702e0e7913f1fc6fb5a0060cf1f
+git@github.com:biothings/api-respone-transform.js.git 1229c20 1229c2022359a963a496362cf0bdb19c5a768a29
